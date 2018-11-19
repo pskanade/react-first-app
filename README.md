@@ -37,8 +37,14 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Creating dynamic application
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Use `{}` to write some java script inside the JSX tags.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Using attributes with user defined component tags
+
+> (Take a look at the alongside code with the same commit.)
+
+- `props` object gets passed to the **Functional component** in this case.
+- When using **Class component** `this.props` gives access to the same attributes as above.
+- The text enclosed inside the component tag can be accessed using `props.children`
