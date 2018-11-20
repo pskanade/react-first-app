@@ -93,3 +93,18 @@ onClick={() => this.eventHandler("hello", "pranav")}
 ```
 
 - In large application where the component renders frequestly, this might create performance issue.
+
+#### Adding two way communication between `class` and `functional` component
+
+- **REQ:** We want to change the value of the name according to the inbox that is inside a functional component.
+
+```js
+// class Component
+onInboxChangeHandler = event => {
+    name = event.target.value
+}
+// pass following as an atribute to the component
+// changed={this.onInboxChangeHandler}
+// functional component
+<input onChange={props.changed} value={props.name} />
+```

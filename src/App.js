@@ -23,6 +23,17 @@ class App extends Component {
     });
   };
 
+  onInboxChangeHandler = event => {
+    this.setState({
+      persons: [
+        {
+          name: event.target.value,
+          age: 23
+        }
+      ]
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -31,6 +42,7 @@ class App extends Component {
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
           click={this.switchNameHandler}
+          changed={this.onInboxChangeHandler}
         >
           I'm a developer
         </Person>
