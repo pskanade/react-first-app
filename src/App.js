@@ -30,6 +30,7 @@ class App extends Component {
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
+          click={this.switchNameHandler}
         >
           I'm a developer
         </Person>

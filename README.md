@@ -55,3 +55,41 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 - This makes it easier to dynamically modify the UI, followed after the any event.
 
 > Most of the components in the react app should be functional. This means that one should limit the number of components, that could change the state of an application. This ensures that the state manipulation operation will be contained. The components that can chagne the state are called CONTAINERS.
+
+### Changing State from functional component (Passing components to other components)
+
+- One can do this by passing a eventHandler/other function reference with an `attribute` of `props`.
+
+```javascript
+<Person
+    name={this.state.persons[0].name}
+    age={this.state.persons[0].age}
+    click={this.switchNameHandler}      // this is how
+>
+```
+
+- The function can be used in `Person` component as:
+
+```javascript
+onClick={props.click}
+```
+
+#### Passing argument with the function to other components
+
+- There are two ways to do this
+  1. Use `bind` method
+  2. Use **Arrow function**
+
+##### `bind` method
+
+```javascript
+this.eventHandler.bind(this, "hello", "pranav");
+```
+
+##### Arrow function (This is costly)
+
+```javascript
+onClick={() => this.eventHandler("hello", "pranav")}
+```
+
+- In large application where the component renders frequestly, this might create performance issue.
