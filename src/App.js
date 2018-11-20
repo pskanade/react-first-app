@@ -41,7 +41,8 @@ class App extends Component {
   };
 
   deletePersonHandler = personIndex => {
-    const persons = this.state.persons;
+    // const persons = this.state.persons; // this is mutable do not do this.
+    const persons = [...this.state.persons]; // Make a copy n then do the operation
     persons.splice(personIndex, 1);
     this.setState({ persons: persons });
   };
