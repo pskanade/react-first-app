@@ -4,7 +4,7 @@ import Person from "./Person/Person";
 
 class App extends Component {
   state = {
-    person: [
+    persons: [
       {
         name: "Pranav",
         age: 23
@@ -12,16 +12,28 @@ class App extends Component {
     ]
   };
 
+  switchNameHandler = () => {
+    this.setState({
+      persons: [
+        {
+          name: "Kanade",
+          age: 23
+        }
+      ]
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <h3>This is my first react application</h3>
         <Person
-          name={this.state.person[0].name}
-          age={this.state.person[0].age}
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
         >
           I'm a developer
         </Person>
+        <button onClick={this.switchNameHandler}>Switch Name</button>
       </div>
     );
   }
