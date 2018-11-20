@@ -3,11 +3,11 @@ import React from "react";
 const person = props => {
   return (
     <div>
-      <p>
+      <p onClick={props.click}>
         I'm {props.name} and I'm {props.age} years old
       </p>
       <input onChange={props.changed} value={props.name} />
-      <p onClick={() => console.log("clicked")}>{props.children}</p>
+      <p>{props.children}</p>
     </div>
   );
 };
