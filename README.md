@@ -41,10 +41,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 - Use `{}` to write some java script inside the JSX tags.
 
-### Using attributes with user defined component tags
+### Using attributes with user defined component tags: Use of `PROPS`
 
 > (Take a look at the alongside code with the same commit.)
 
 - `props` object gets passed to the **Functional component** in this case.
 - When using **Class component** `this.props` gives access to the same attributes as above.
 - The text enclosed inside the component tag can be accessed using `props.children`
+
+### Using STATE
+
+- `state` object is allowed to be used in every component that extends `Component`.
+- This makes it easier to dynamically modify the UI, followed after the any event.
