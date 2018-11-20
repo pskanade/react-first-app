@@ -108,3 +108,7 @@ onInboxChangeHandler = event => {
 // functional component
 <input onChange={props.changed} value={props.name} />
 ```
+
+## Working with list data
+
+- Use `map` function.
