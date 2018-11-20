@@ -53,3 +53,5 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 - `state` object is allowed to be used in every component that extends `Component`.
 - This makes it easier to dynamically modify the UI, followed after the any event.
+
+> Most of the components in the react app should be functional. This means that one should limit the number of components, that could change the state of an application. This ensures that the state manipulation operation will be contained. The components that can chagne the state are called CONTAINERS.
