@@ -24,22 +24,16 @@ class App extends Component {
     show: false
   };
 
-  onInboxChangeHandler = event => {
+  onInboxChangeHandler = (event, id) => {
+    const personWithIndex = this.state.persons.findIndex(person => {
+      return person.id === id;
+    });
+
+    let temp_persons = [...this.state.persons];
+    temp_persons[personWithIndex].name = event.target.value;
+
     this.setState({
-      persons: [
-        {
-          name: event.target.value,
-          age: 23
-        },
-        {
-          name: "Aaditi",
-          age: 19
-        },
-        {
-          name: "Chetan",
-          age: 22
-        }
-      ]
+      persons: temp_persons
     });
   };
 
@@ -65,7 +59,7 @@ class App extends Component {
                 age={person.age}
                 key={person.id}
                 click={() => this.deletePersonHandler(index)}
-                changed={this.onInboxChangeHandler}
+                changed={event => this.onInboxChangeHandler(event, person.id)}
               />
             );
           })}

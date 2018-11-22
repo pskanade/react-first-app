@@ -113,3 +113,4 @@ onInboxChangeHandler = event => {
 
 - Use `map` function.
 - Always make a temp copy before operating on mutable state properties.
+- Use key attribute when working with the lists. It gives dom clear idea to find which components need rerendering.
