@@ -112,3 +112,4 @@ onInboxChangeHandler = event => {
 ## Working with list data
 
 - Use `map` function.
+- Always make a temp copy before operating on mutable state properties.
