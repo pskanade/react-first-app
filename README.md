@@ -139,3 +139,43 @@ onInboxChangeHandler = event => {
 ![Update Lifecycle](/assets/img/Update_by_parent_life.png)
 
 > componentWillUpdate - Update states here it is more appropriate
+
+> shouldComponentUpdate - This function returns `True` or `False`. This decides if the compont gets re-rendered.
+
+### `PureComponent`
+
+This is another type of object which should be used when you know that the derived component will have state dependent updates in it. By extending this component, one no longer have to implement `componentShouldUpdate` method.
+
+### Updating DOM
+
+![Update DOM](/assets/img/Updaitng_dom.png)
+
+## Higher order components
+
+- Find the alongside commit
+
+### Fragments
+
+If your project uses React 16.2, you can now use a built-in "Aux" component - a so called fragment.
+
+It's actually not called Aux but you simply use <> - an empty JSX tag.
+
+So the following code
+
+```jsx
+<Aux>
+  <h1>First Element</h1>
+  <h1>Second Element</h1>
+</Aux>
+```
+
+becomes
+
+```jsx
+<>
+  <h1>First Element</h1>
+  <h1>Second Element</h1>
+</>
+```
+
+Behind the scenes, it does the same our Aux component did.
