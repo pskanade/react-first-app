@@ -114,3 +114,20 @@ onInboxChangeHandler = event => {
 - Use `map` function.
 - Always make a temp copy before operating on mutable state properties.
 - Use key attribute when working with the lists. It gives dom clear idea to find which components need rerendering.
+
+## Deep dive in the Components: Stateful and Stateless
+
+#### Stateful
+
+- It extens `React.Component`
+- It can access **State**
+- It can have **Lifecycle Hooks** (_Handlers_)
+- Use only if you need to manage State or access to lifecycle hooks.
+
+#### Stateless
+
+- In all other cases.
+
+### Component Lifecycle - Creation
+
+![component lifecycle](/assets/img/component_life.png)
