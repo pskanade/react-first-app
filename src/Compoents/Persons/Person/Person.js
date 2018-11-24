@@ -1,5 +1,6 @@
 import React from "react";
 import Aux from "./../../../hoc/Aux";
+import withHoc from "../../../hoc/withHoc";
 
 const person = props => {
   return (
@@ -13,4 +14,4 @@ const person = props => {
   );
 };
 
-export default person;
+export default withHoc(person);

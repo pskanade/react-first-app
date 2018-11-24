@@ -179,3 +179,17 @@ becomes
 ```
 
 Behind the scenes, it does the same our Aux component did.
+
+#### Using Classes in higher order components
+
+```jsx
+const withHoc = Comp => {
+  return class extends Components {
+    render() {
+      <div>
+        <Comp {...props} />
+      </div>;
+    }
+  };
+};
+```
