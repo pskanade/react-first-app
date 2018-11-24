@@ -193,3 +193,16 @@ const withHoc = Comp => {
   };
 };
 ```
+
+## `setState` using previous state
+
+- `setState` gets executed async. So, there is always possibilility of overriding the previous state from some where else. use following to refelect the correct results.
+
+```js
+this.setState((prevState, props) => {
+  return {
+    show: !this.state.show,
+    toggleClicked: prevState.toggleClicked + 1
+  };
+});
+```

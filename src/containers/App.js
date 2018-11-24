@@ -22,7 +22,8 @@ class App extends Component {
         age: 22
       }
     ],
-    show: false
+    show: false,
+    toggleClicked: 0
   };
 
   onInboxChangeHandler = (event, id) => {
@@ -46,7 +47,12 @@ class App extends Component {
   };
 
   togglePersonsHandler = () => {
-    this.setState({ show: !this.state.show });
+    this.setState((prevState, props) => {
+      return {
+        show: !this.state.show,
+        toggleClicked: prevState.toggleClicked + 1
+      };
+    });
   };
 
   renderPersons = () => {
