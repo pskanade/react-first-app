@@ -130,4 +130,12 @@ onInboxChangeHandler = event => {
 
 ### Component Lifecycle - Creation
 
-![component lifecycle](/assets/img/component_life.png)
+> Side effects - Requesting data from server
+
+![Creation Lifecycle](/assets/img/Creation_life.png)
+
+### Component Lifecycle - Update (tirggred by Parent)
+
+![Update Lifecycle](/assets/img/Update_by_parent_life.png)
+
+> componentWillUpdate - Update states here it is more appropriate
