@@ -4,6 +4,8 @@ import Persons from "../Compoents/Persons/Persons";
 import Cockpit from "../Compoents/Cockpit/Cockpit";
 import withHoc from "../hoc/withHoc";
 
+export const AuthContext = React.createContext(false); // the default value is set to false
+
 class App extends Component {
   state = {
     persons: [
@@ -69,7 +71,6 @@ class App extends Component {
         persons={this.state.persons}
         clicked={this.deletePersonHandler}
         changed={this.onInboxChangeHandler}
-        isAuthenticated={this.state.isAuthenticated}
       />
     );
   };
@@ -81,7 +82,9 @@ class App extends Component {
           clicked={this.togglePersonsHandler}
           login={this.onLoginHandler}
         />
-        {this.renderPersons()}
+        <AuthContext.Provider value={this.state.isAuthenticated}>
+          {this.renderPersons()}
+        </AuthContext.Provider>
       </div>
     );
   }

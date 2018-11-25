@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Aux from "./../../../hoc/Aux";
 import withHoc from "../../../hoc/withHoc";
+import { AuthContext } from "../../../containers/App";
 
 class Person extends Component {
   componentDidMount() {
@@ -9,7 +10,9 @@ class Person extends Component {
   render() {
     return (
       <Aux>
-        {this.props.isAuthenticated ? <p>I'm in :)</p> : null}
+        <AuthContext.Consumer>
+          {auth => (auth ? <p>I'm in :)</p> : null)}
+        </AuthContext.Consumer>
         <p onClick={this.props.click}>
           I'm {this.props.name} and I'm {this.props.age} years old
         </p>
