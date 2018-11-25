@@ -13,6 +13,7 @@ export default props => {
               key={person.id}
               click={() => props.clicked(index)}
               changed={event => props.changed(event, person.id)}
+              isAuthenticated={props.isAuthenticated}
             />
           );
         })}

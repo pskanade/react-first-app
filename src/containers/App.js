@@ -24,7 +24,8 @@ class App extends Component {
       }
     ],
     show: false,
-    toggleClicked: 0
+    toggleClicked: 0,
+    isAuthenticated: false
   };
 
   onInboxChangeHandler = (event, id) => {
@@ -47,6 +48,11 @@ class App extends Component {
     this.setState({ persons: persons });
   };
 
+  onLoginHandler = () => {
+    console.log("logged in .. ");
+    this.setState({ isAuthenticated: true });
+  };
+
   togglePersonsHandler = () => {
     this.setState((prevState, props) => {
       return {
@@ -63,6 +69,7 @@ class App extends Component {
         persons={this.state.persons}
         clicked={this.deletePersonHandler}
         changed={this.onInboxChangeHandler}
+        isAuthenticated={this.state.isAuthenticated}
       />
     );
   };
@@ -70,7 +77,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Cockpit clicked={this.togglePersonsHandler} />
+        <Cockpit
+          clicked={this.togglePersonsHandler}
+          login={this.onLoginHandler}
+        />
         {this.renderPersons()}
       </div>
     );

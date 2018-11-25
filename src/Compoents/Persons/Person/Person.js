@@ -9,6 +9,7 @@ class Person extends Component {
   render() {
     return (
       <Aux>
+        {this.props.isAuthenticated ? <p>I'm in :)</p> : null}
         <p onClick={this.props.click}>
           I'm {this.props.name} and I'm {this.props.age} years old
         </p>
