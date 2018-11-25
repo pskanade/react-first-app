@@ -1,17 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
 import Aux from "./../../../hoc/Aux";
 import withHoc from "../../../hoc/withHoc";
 
-const person = props => {
-  return (
-    <Aux>
-      <p onClick={props.click}>
-        I'm {props.name} and I'm {props.age} years old
-      </p>
-      <input onChange={props.changed} value={props.name} />
-      <p>{props.children}</p>
-    </Aux>
-  );
-};
+class Person extends Component {
+  componentDidMount() {
+    this.inputText.focus();
+  }
+  render() {
+    return (
+      <Aux>
+        <p onClick={this.props.click}>
+          I'm {this.props.name} and I'm {this.props.age} years old
+        </p>
+        <input
+          ref={inp => (this.inputText = inp)}
+          onChange={this.props.changed}
+          value={this.props.name}
+        />
+        <p>{this.props.children}</p>
+      </Aux>
+    );
+  }
+}
 
-export default withHoc(person);
+export default withHoc(Person);

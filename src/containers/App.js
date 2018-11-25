@@ -3,6 +3,7 @@ import "./App.css";
 import Persons from "../Compoents/Persons/Persons";
 import Cockpit from "../Compoents/Cockpit/Cockpit";
 import withHoc from "../hoc/withHoc";
+
 class App extends Component {
   state = {
     persons: [

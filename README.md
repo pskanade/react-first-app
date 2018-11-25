@@ -206,3 +206,14 @@ this.setState((prevState, props) => {
   };
 });
 ```
+
+## Validating props type
+
+> npm install --save prop-types
+
+[Guide](https://reactjs.org/docs/typechecking-with-proptypes.html)
+[Notes](https://www.udemy.com/react-the-complete-guide-incl-redux/learn/v4/t/lecture/8302820?start=0)
+
+## Adding references for FOCUS
+
+> Check the alongside commit for code.
